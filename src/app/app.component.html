@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h3>I'm in the AppComponent</h3>
+            <!-- <h3>I'm in the AppComponent</h3>
             <hr>
             <app-servers></app-servers>
             <app-warning-alert></app-warning-alert>
@@ -14,7 +14,7 @@
                 (click)="username = ''">
                 Reset User
             </button>
-            <br>
+            <br> -->
             <!-- <button class="btn btn-primary" 
             (click)= "showSecret = !showSecret">
                 Display Details</button> -->
@@ -22,9 +22,9 @@
             (click)= "onTooggleDisplay()">
                 Display Details</button>
             <p *ngIf="showSecret">Secret Password = tuna</p>
-            <div *ngFor="let logItem of log"
-                [ngStyle]="{'background-color': logItem >= 5 ? 'blue' : 'transparent'}"
-                [ngClass]="{'white-text': logItem >=5}">
+            <div *ngFor="let logItem of log; let i = index"
+                [ngStyle]="{'background-color': i >= 5 ? 'blue' : 'transparent'}"
+                [ngClass]="{'white-text': i >=5}">
                 {{ logItem }}</div>
         </div>
     </div>
