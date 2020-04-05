@@ -6,6 +6,14 @@
             <app-servers></app-servers>
             <app-warning-alert></app-warning-alert>
             <app-success-alert></app-success-alert>
+            <label>Username</label>
+            <input type="text" class="form-control" [(ngModel)]="username">
+            <p>{{ username }}</p>
+            <button class="btn btn-primary" 
+                [disabled]="username ===''"
+                (click)="username = ''">
+                Reset User
+            </button>
         </div>
     </div>
 </div>
