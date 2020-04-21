@@ -10,6 +10,7 @@ import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipe
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -23,6 +24,7 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     RecipesItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
