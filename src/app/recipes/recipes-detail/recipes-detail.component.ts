@@ -16,6 +16,5 @@ export class RecipesDetailComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     console.log('Recipe Detail', this.recipe);
-    
   }
 }

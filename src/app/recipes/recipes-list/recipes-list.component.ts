@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, AfterViewInit, EventEmitter, DoCheck } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-list',
@@ -7,22 +8,16 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit, DoCheck {
-  recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is simply a test1', 'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg'),
-    new Recipe('A Test Recipe', 'This is simply a test2', 'https://www.healthhub.sg/sites/assets/Assets/Categories/Food%20N%20Nutrition/indian-vegetarian-curry-brown-rice.jpg')
-  ];
+  recipes: Recipe[];
   @Output() recipeChose = new EventEmitter <Recipe>();
 
-  constructor() {
+  constructor(private recipesService: RecipeService) {
   }
 
   ngOnInit(): void {
+    this.recipes = this.recipesService.getRecipes();
   }
 
   ngDoCheck() {
-  }
-
-  getRecipe(recipe: Recipe) {
-    this.recipeChose.emit(recipe);
   }
 }
