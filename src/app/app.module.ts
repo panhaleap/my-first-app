@@ -11,6 +11,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -31,7 +32,7 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     FormsModule,
     NgxMaskModule.forRoot(options)
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
